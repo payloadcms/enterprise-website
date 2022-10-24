@@ -1,0 +1,119 @@
+@import './queries.scss';
+@import './colors.scss';
+@import './type.scss';
+
+:root {
+  --breakpoint-xs-width: 400px;
+  --breakpoint-s-width: 768px;
+  --breakpoint-m-width: 1024px;
+  --breakpoint-l-width: 1440px;
+  --scrollbar-width: 17px;
+
+  --base: 24px;
+  --font-body: system-ui;
+  --font-mono: 'Roboto Mono', monospace;
+
+  --gutter-h: 180px;
+
+  @include large-break {
+    --gutter-h: 144px;
+  }
+
+  @include mid-break {
+    --gutter-h: 24px;
+  }
+}
+
+/////////////////////////////
+// GLOBAL STYLES
+/////////////////////////////
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  @extend %body;
+  background: var(--color-base-0);
+  -webkit-font-smoothing: antialiased;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-base-1000);
+  margin: 0;
+}
+
+::selection {
+  background: var(--color-success-500);
+  color: var(--color-base-800);
+}
+
+::-moz-selection {
+  background: var(--color-success-500);
+  color: var(--color-base-800);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1 {
+  @extend %h1;
+}
+
+h2 {
+  @extend %h2;
+}
+
+h3 {
+  @extend %h3;
+}
+
+h4 {
+  @extend %h4;
+}
+
+h5 {
+  @extend %h5;
+}
+
+h6 {
+  @extend %h6;
+}
+
+p {
+  margin: var(--base) 0;
+}
+
+ul,
+ol {
+  padding-left: var(--base);
+  margin: 0 0 var(--base);
+}
+
+a {
+  color: currentColor;
+
+  &:focus {
+    opacity: .8;
+    outline: none;
+  }
+
+  &:active {
+    opacity: .7;
+    outline: none;
+  }
+}
+
+svg {
+  vertical-align: middle;
+}
