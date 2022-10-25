@@ -34,7 +34,7 @@ export const HeaderBar: React.FC<HeaderBarProps> = ({ children }) => {
 }
 
 export const Header: React.FC<{ mainMenu: MainMenu }> = ({ mainMenu }) => {
-  const navItems = mainMenu.navItems || [];
+  const navItems = mainMenu?.navItems || [];
 
   return (
     <>

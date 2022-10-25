@@ -3,8 +3,10 @@ import { GridProvider } from '@faceless-ui/css-grid';
 import React from 'react';
 import { Header } from '../components/Header';
 import { MainMenu } from '../payload-types';
-import '../css/app.scss';
 import { ModalContainer, ModalProvider } from '@faceless-ui/modal';
+import cssVariables from '../cssVariables';
+
+import '../css/app.scss';
 
 const PayloadApp = (appProps: AppProps<{ mainMenu: MainMenu }>): React.ReactElement => {
   const {
@@ -16,9 +18,9 @@ const PayloadApp = (appProps: AppProps<{ mainMenu: MainMenu }>): React.ReactElem
     <React.Fragment>
       <GridProvider
         breakpoints={{
-          s: 768,
-          m: 1024,
-          l: 1440,
+          s: cssVariables.breakpoints.s,
+          m: cssVariables.breakpoints.m,
+          l: cssVariables.breakpoints.l,
         }}
         colGap={{
           s: '24px',
