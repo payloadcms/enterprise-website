@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useContext, createContext } from 'react';
 import { VerticalPadding, VerticalPaddingOptions } from '../VerticalPadding';
 import classes from './index.module.scss';
 
+export type BackgroundColor = 'white' | 'black'
+
+export const BackgroundColorContext = createContext<BackgroundColor>('white');
+
+export const useBackgroundColor = (): BackgroundColor => useContext(BackgroundColorContext);
+
+
 type Props = {
-  color?: 'white' | 'black'
+  color?: BackgroundColor
   paddingTop?: VerticalPaddingOptions
   paddingBottom?: VerticalPaddingOptions
   className?: string
@@ -29,12 +36,14 @@ export const BackgroundColor: React.FC<Props> = (props) => {
         className,
       ].filter(Boolean).join(' ')}
     >
-      <VerticalPadding
-        top={paddingTop}
-        bottom={paddingBottom}
-      >
-        {children}
-      </VerticalPadding>
+      <BackgroundColorContext.Provider value={color}>
+        <VerticalPadding
+          top={paddingTop}
+          bottom={paddingBottom}
+        >
+          {children}
+        </VerticalPadding>
+      </BackgroundColorContext.Provider>
     </div>
   );
 }
