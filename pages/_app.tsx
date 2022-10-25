@@ -1,10 +1,10 @@
 import { AppProps } from 'next/app';
 import { GridProvider } from '@faceless-ui/css-grid';
+import { ModalContainer, ModalProvider } from '@faceless-ui/modal';
 import React from 'react';
 import { Header } from '../components/Header';
 import { MainMenu } from '../payload-types';
 import '../css/app.scss';
-import { ModalContainer, ModalProvider } from '@faceless-ui/modal';
 
 const PayloadApp = (appProps: AppProps<{ mainMenu: MainMenu }>): React.ReactElement => {
   const {
@@ -28,7 +28,7 @@ const PayloadApp = (appProps: AppProps<{ mainMenu: MainMenu }>): React.ReactElem
         }}
         cols={{
           s: 4,
-          m: 12,
+          m: 4,
           l: 12,
           xl: 12,
         }}
