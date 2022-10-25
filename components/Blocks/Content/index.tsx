@@ -1,10 +1,10 @@
 import React from 'react';
 import { Grid, Cell } from '@faceless-ui/css-grid'
 import { Page } from '../../../payload-types';
-import classes from './index.module.scss';
 import RichText from '../../RichText';
 import { Gutter } from '../../Gutter';
 import { CMSLink } from '../../Link';
+import classes from './index.module.scss';
 
 type Props = Extract<Page['layout'][0], { blockType: 'content' }>
 
@@ -14,13 +14,14 @@ const Columns: React.FC<Props> = ({
   columnTwo,
   columnThree,
 }) => {
+
   switch (layout) {
     case 'oneColumn': {
       return (
         <Cell cols={9} colsM={4}>
           <RichText content={columnOne.richText} />
           {columnOne.enableLink && (
-            <CMSLink {...columnOne.link} />
+            <CMSLink className={classes.link} {...columnOne.link} />
           )}
         </Cell>
       )
@@ -41,13 +42,13 @@ const Columns: React.FC<Props> = ({
           <Cell cols={col1Cols} colsM={4}>
             <RichText content={columnOne.richText} />
             {columnOne.enableLink && (
-              <CMSLink {...columnOne.link} />
+              <CMSLink className={classes.link} {...columnOne.link} />
             )}
           </Cell>
           <Cell cols={col2Cols} colsM={4}>
             <RichText content={columnTwo.richText} />
             {columnTwo.enableLink && (
-              <CMSLink {...columnTwo.link} />
+              <CMSLink className={classes.link} {...columnTwo.link} />
             )}
           </Cell>
         </React.Fragment>
@@ -60,19 +61,19 @@ const Columns: React.FC<Props> = ({
           <Cell cols={4} colsM={4}>
             <RichText content={columnOne.richText} />
             {columnOne.enableLink && (
-              <CMSLink {...columnOne.link} />
+              <CMSLink className={classes.link} {...columnOne.link} />
             )}
           </Cell>
           <Cell cols={4} colsM={4}>
             <RichText content={columnTwo.richText} />
             {columnTwo.enableLink && (
-              <CMSLink {...columnTwo.link} />
+              <CMSLink className={classes.link} {...columnTwo.link} />
             )}
           </Cell>
           <Cell cols={4} colsM={4}>
             <RichText content={columnThree.richText} />
             {columnThree.enableLink && (
-              <CMSLink {...columnThree.link} />
+              <CMSLink className={classes.link} {...columnThree.link} />
             )}
           </Cell>
         </React.Fragment>
