@@ -13,7 +13,7 @@ export const HighImpactHero: React.FC<Page['hero']> = ({ richText, media, links 
   return (
     <Gutter className={classes.hero}>
       <Grid>
-        <Cell cols={9} colsM={4}>
+        <Cell cols={10} colsM={4}>
           <RichText content={richText} />
         </Cell>
       </Grid>
