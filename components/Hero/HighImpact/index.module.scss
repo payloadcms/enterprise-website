@@ -2,6 +2,10 @@
 
 .hero {
   padding-top: calc(var(--base) * 3);
+
+  @include mid-break {
+    padding-top: var(--base);
+  }
 }
 
 .media {
