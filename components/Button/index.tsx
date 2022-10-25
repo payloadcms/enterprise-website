@@ -11,6 +11,7 @@ export type Props = {
   onClick?: () => void
   href?: string
   newTab?: boolean
+  className?: string
 }
 
 const elements = {
@@ -25,11 +26,12 @@ export const Button: React.FC<Props> = ({
   newTab,
   href,
   appearance,
+  className: classNameFromProps
 }) => {
   const backgroundColor = useBackgroundColor();
   const newTabProps = newTab ? { target: '_blank', rel: 'noopener noreferrer' } : {};
   const Element = elements[el];
-  const className = [classes[`appearance--${appearance}`], classes[`${appearance}--${backgroundColor}`], classes.button].filter(Boolean).join(' ');
+  const className = [classNameFromProps, classes[`appearance--${appearance}`], classes[`${appearance}--${backgroundColor}`], classes.button].filter(Boolean).join(' ');
 
   const elementProps = {
     ...newTabProps,
