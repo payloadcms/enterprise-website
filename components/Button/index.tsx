@@ -29,13 +29,15 @@ export const Button: React.FC<Props> = ({
   const backgroundColor = useBackgroundColor();
   const newTabProps = newTab ? { target: '_blank', rel: 'noopener noreferrer' } : {};
   const Element = elements[el];
-  const className = [classes[`${appearance}--${backgroundColor}`], classes.button].filter(Boolean).join(' ');
+  const className = [classes[`appearance--${appearance}`], classes[`${appearance}--${backgroundColor}`], classes.button].filter(Boolean).join(' ');
 
   const elementProps = {
     ...newTabProps,
     href,
     className,
   }
+
+  if (el !== 'link') delete elementProps.className;
 
   const content = (
     <div className={classes.content}>
