@@ -1,1 +1,7 @@
-.hero {}
+@use '../../../css/type.scss' as *;
+
+.richText {
+  h1 {
+    @extend %h2;
+  }
+}

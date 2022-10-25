@@ -10,7 +10,10 @@ const heroes = {
   lowImpact: LowImpactHero,
 }
 
-export const Hero: React.FC<Page['hero']> = (props) => {
+export type HeroProps = {
+  title: Page['title']
+} & Page['hero']
+export const Hero: React.FC<HeroProps> = (props) => {
   const { type } = props;
   const HeroToRender = heroes[type];
   return <HeroToRender {...props} />

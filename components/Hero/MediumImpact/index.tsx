@@ -1,11 +1,9 @@
 import React from 'react';
-import { Page } from '../../../payload-types';
+import { HeroProps } from '..';
 
 import classes from './index.module.scss';
 
-type Hero = Page['hero'];
-
-export const MediumImpactHero: React.FC<Hero> = ({ richText, media }) => {
+export const MediumImpactHero: React.FC<HeroProps> = ({ richText, media }) => {
   return (
     <div className={classes.hero}>
       medium impact

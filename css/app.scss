@@ -1,6 +1,6 @@
-@import './queries.scss';
-@import './colors.scss';
-@import './type.scss';
+@use './queries.scss' as *;
+@use './colors.scss' as *;
+@use './type.scss' as *;
 
 :root {
   --breakpoint-xs-width : #{$breakpoint-xs-width};
@@ -15,6 +15,9 @@
 
   --gutter-h: 180px;
   --block-padding: 120px;
+
+  --header-z-index: 100;
+  --modal-z-index: 90;
 
   @include large-break {
     --gutter-h: 144px;
@@ -95,6 +98,10 @@ h6 {
 
 p {
   margin: var(--base) 0;
+
+  @include mid-break {
+    margin: calc(var(--base) * .75) 0;
+  }
 }
 
 ul,

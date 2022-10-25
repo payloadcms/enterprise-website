@@ -4,6 +4,7 @@ import React from 'react';
 import { Header } from '../components/Header';
 import { MainMenu } from '../payload-types';
 import '../css/app.scss';
+import { ModalContainer, ModalProvider } from '@faceless-ui/modal';
 
 const PayloadApp = (appProps: AppProps<{ mainMenu: MainMenu }>): React.ReactElement => {
   const {
@@ -32,8 +33,12 @@ const PayloadApp = (appProps: AppProps<{ mainMenu: MainMenu }>): React.ReactElem
           xl: 12,
         }}
       >
-        <Header mainMenu={pageProps.mainMenu} />
-        <Component {...pageProps} />
+        <ModalProvider transTime={0} zIndex="var(--modal-z-index)">
+          <Header mainMenu={pageProps.mainMenu} />
+          <Component {...pageProps} />
+
+          <ModalContainer />
+        </ModalProvider>
       </GridProvider>
     </React.Fragment>
   )
