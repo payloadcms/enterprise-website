@@ -159,7 +159,7 @@ const serialize = (children: Children): React.ReactElement[] => children.map((no
         </Label>
       );
 
-    case 'largeBody': {
+    case 'large-body': {
       return (
         <LargeBody
           key={i}
