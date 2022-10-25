@@ -59,6 +59,7 @@ const Blocks: React.FC<{
                   paddingBottom={paddingBottom}
                   color={backgroundColor}
                 >
+                  {/*@ts-ignore*/}
                   <Block
                     id={toKebabCase(blockName)}
                     {...block}
