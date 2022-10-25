@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { Page } from '../../payload-types';
-import { Button, Props as ButtonProps } from '../Button';
+import { Button } from '../Button';
 
 type CMSLinkType = {
   type?: 'custom' | 'reference'
@@ -27,7 +27,7 @@ export const CMSLink: React.FC<CMSLinkType> = ({
   children,
   className,
 }) => {
-  const href = (type === 'reference' && typeof reference?.value === 'object' && reference.value.slug) ? `/${reference.value.slug}` : undefined;
+  const href = (type === 'reference' && typeof reference?.value === 'object' && reference.value.slug) ? `/${reference.value.slug}` : url;
 
   if (!appearance) {
     const newTabProps = newTab ? { target: '_blank', rel: 'noopener noreferrer' } : {};
@@ -53,10 +53,7 @@ export const CMSLink: React.FC<CMSLinkType> = ({
     }
   }
 
-  const el: ButtonProps['el'] = type === 'custom' ? 'a' : 'link';
-
   const buttonProps = {
-    el,
     newTab,
     href,
     appearance,
@@ -64,6 +61,6 @@ export const CMSLink: React.FC<CMSLinkType> = ({
   }
 
   return (
-    <Button {...buttonProps} />
+    <Button {...buttonProps} el="link" />
   )
 }
