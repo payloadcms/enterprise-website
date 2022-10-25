@@ -62,7 +62,6 @@ const Blocks: React.FC<{
                   <Block
                     id={toKebabCase(blockName)}
                     {...block}
-                    blockNumber={index}
                   />
                 </BackgroundColor>
               );
