@@ -24,6 +24,10 @@ $spacer-h: calc(var(--block-padding) / 2);
   justify-content: center;
   height: 100%;
 
+  :last-child {
+    margin-bottom: 0;
+  }
+
   @include mid-break {
     margin-top: 20px
   }
