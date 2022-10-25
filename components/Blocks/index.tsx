@@ -8,7 +8,7 @@ import { ContentBlock } from './Content';
 import { MediaBlock } from './Media';
 
 const blockComponents = {
-  callToAction: CallToActionBlock,
+  cta: CallToActionBlock,
   content: ContentBlock,
   media: MediaBlock
 }
