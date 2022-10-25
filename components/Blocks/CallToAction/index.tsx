@@ -1,10 +1,10 @@
-import { Cell, Grid } from '@faceless-ui/css-grid';
 import React from 'react';
+import { Cell, Grid } from '@faceless-ui/css-grid';
 import { Page } from '../../../payload-types';
+import { BackgroundColor } from '../../BackgroundColor';
 import { Gutter } from '../../Gutter';
 import { CMSLink } from '../../Link';
 import RichText from '../../RichText';
-import { VerticalPadding } from '../../VerticalPadding';
 
 import classes from './index.module.scss';
 
@@ -30,19 +30,23 @@ type Props = {
   blockName?: string;
   blockType: 'cta';
 }
-export const CallToActionBlock: React.FC<Props> = ({ links, richText }) => {
+export const CallToActionBlock: React.FC<Props> = ({ ctaBackgroundColor, links, richText }) => {
+  const oppositeBackgroundColor = ctaBackgroundColor === 'white' ? 'black' : 'white';
+
   return (
     <Gutter>
-      <div className={classes.callToAction}>
-        <VerticalPadding>
+      <BackgroundColor color={oppositeBackgroundColor}>
+        <div
+          className={classes.callToAction}
+        >
           <Grid>
-            <Cell cols={8} colsL={6} colsM={12}>
+            <Cell cols={8} colsL={7} colsM={12}>
               <div>
                 <RichText className={classes.richText} content={richText} />
               </div>
             </Cell>
 
-            <Cell start={10} cols={3} startL={8} colsL={5} startM={1} colsM={12}>
+            <Cell start={10} cols={3} startL={9} colsL={4} startM={1} colsM={12}>
               <div className={classes.linkGroup}>
                 {(links || []).map(({ link }, i) => {
                   return (
@@ -55,8 +59,8 @@ export const CallToActionBlock: React.FC<Props> = ({ links, richText }) => {
               </div>
             </Cell>
           </Grid>
-        </VerticalPadding>
-      </div>
+        </div>
+      </BackgroundColor>
     </Gutter>
   )
 }

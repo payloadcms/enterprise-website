@@ -7,6 +7,11 @@ $spacer-h: calc(var(--block-padding) / 2);
   padding-right: $spacer-h;
 }
 
+.background--white {
+  background-color: var(--color-base-1000);
+  color: var(--color-base-0);
+}
+
 .richText {
   :last-child {
     margin-bottom: 0;
@@ -18,6 +23,10 @@ $spacer-h: calc(var(--block-padding) / 2);
   flex-direction: column;
   justify-content: center;
   height: 100%;
+
+  :last-child {
+    margin-bottom: 0;
+  }
 
   @include mid-break {
     margin-top: 20px
