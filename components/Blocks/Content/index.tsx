@@ -39,9 +39,9 @@ const Columns: React.FC<Props> = ({
       return (
         <React.Fragment>
           <Cell cols={col1Cols} colsM={4}>
-            <RichText content={columnTwo.richText} />
-            {columnTwo.enableLink && (
-              <CMSLink {...columnTwo.link} />
+            <RichText content={columnOne.richText} />
+            {columnOne.enableLink && (
+              <CMSLink {...columnOne.link} />
             )}
           </Cell>
           <Cell cols={col2Cols} colsM={4}>
@@ -58,9 +58,9 @@ const Columns: React.FC<Props> = ({
       return (
         <React.Fragment>
           <Cell cols={4} colsM={4}>
-            <RichText content={columnTwo.richText} />
-            {columnTwo.enableLink && (
-              <CMSLink {...columnTwo.link} />
+            <RichText content={columnOne.richText} />
+            {columnOne.enableLink && (
+              <CMSLink {...columnOne.link} />
             )}
           </Cell>
           <Cell cols={4} colsM={4}>
