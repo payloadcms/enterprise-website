@@ -22,9 +22,9 @@
 }
 
 .mobileMenuToggler {
-  display: none;
   all: unset;
   cursor: pointer;
+  display: none;
 
   &[aria-expanded="true"] {
     transform: rotate(-25deg);
