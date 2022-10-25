@@ -1,3 +1,15 @@
 .header {
   padding: var(--base) 0;
 }
+
+.wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav {
+  a {
+    text-decoration: none;
+    margin-left: var(--base);
+  }
+}
