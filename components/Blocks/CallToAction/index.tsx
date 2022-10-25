@@ -30,24 +30,19 @@ type Props = {
   blockName?: string;
   blockType: 'cta';
 }
-export const CallToActionBlock: React.FC<Props> = ({ ctaBackgroundColor, links, richText }) => {
+export const CallToActionBlock: React.FC<Props> = ({ links, richText }) => {
   return (
     <Gutter>
-      <div
-        className={[
-          classes.callToAction,
-          classes[`background--${ctaBackgroundColor}`],
-        ].filter(Boolean).join(' ')}
-      >
+      <div className={classes.callToAction}>
         <VerticalPadding>
           <Grid>
-            <Cell cols={8} colsS={4}>
+            <Cell cols={8} colsL={6} colsM={12}>
               <div>
-                <RichText content={richText} />
+                <RichText className={classes.richText} content={richText} />
               </div>
             </Cell>
 
-            <Cell start={10} cols={3}>
+            <Cell start={10} cols={3} startL={8} colsL={5} startM={1} colsM={12}>
               <div className={classes.linkGroup}>
                 {(links || []).map(({ link }, i) => {
                   return (
