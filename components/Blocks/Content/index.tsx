@@ -19,27 +19,61 @@ const Columns: React.FC<Props> = ({
       return (
         <Cell cols={9} colsM={4}>
           <RichText content={columnOne.richText} />
-          {/* {columnOne.enableLink && (
+          {columnOne.enableLink && (
             <CMSLink {...columnOne.link} />
-          )} */}
+          )}
         </Cell>
       )
     }
 
-    case 'halfAndHalf': {
+    case 'halfAndHalf':
+    case 'twoThirdsOneThird': {
+      let col1Cols = 6;
+      let col2Cols = 6;
+
+      if (layout === 'twoThirdsOneThird') {
+        col1Cols = 8;
+        col2Cols = 4;
+      }
+
       return (
         <React.Fragment>
-          <Cell cols={6} colsM={4}>
+          <Cell cols={col1Cols} colsM={4}>
             <RichText content={columnTwo.richText} />
-            {/* {columnTwo.enableLink && (
+            {columnTwo.enableLink && (
               <CMSLink {...columnTwo.link} />
-            )} */}
+            )}
           </Cell>
-          <Cell cols={6} colsM={4}>
+          <Cell cols={col2Cols} colsM={4}>
             <RichText content={columnTwo.richText} />
-            {/* {columnTwo.enableLink && (
+            {columnTwo.enableLink && (
               <CMSLink {...columnTwo.link} />
-            )} */}
+            )}
+          </Cell>
+        </React.Fragment>
+      )
+    }
+
+    case 'threeColumns': {
+      return (
+        <React.Fragment>
+          <Cell cols={4} colsM={4}>
+            <RichText content={columnTwo.richText} />
+            {columnTwo.enableLink && (
+              <CMSLink {...columnTwo.link} />
+            )}
+          </Cell>
+          <Cell cols={4} colsM={4}>
+            <RichText content={columnTwo.richText} />
+            {columnTwo.enableLink && (
+              <CMSLink {...columnTwo.link} />
+            )}
+          </Cell>
+          <Cell cols={4} colsM={4}>
+            <RichText content={columnThree.richText} />
+            {columnThree.enableLink && (
+              <CMSLink {...columnThree.link} />
+            )}
           </Cell>
         </React.Fragment>
       )
