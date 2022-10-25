@@ -5,12 +5,12 @@ import { BackgroundColor } from '../BackgroundColor';
 import { VerticalPaddingOptions } from '../VerticalPadding';
 import { CallToActionBlock } from './CallToAction';
 import { ContentBlock } from './Content';
-import { MediaBlock } from './Media';
+import { MediaBlock } from './MediaBlock';
 
 const blockComponents = {
   callToAction: CallToActionBlock,
   content: ContentBlock,
-  media: MediaBlock
+  mediaBlock: MediaBlock
 }
 
 const Blocks: React.FC<{

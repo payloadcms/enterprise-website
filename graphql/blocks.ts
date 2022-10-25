@@ -40,7 +40,11 @@ export const MEDIA_BLOCK = `
   mediaBackgroundColor
   position
   media {
-    url
+    mimeType
+    filename
+    width
+    height
+    alt
   }
   caption
 }
