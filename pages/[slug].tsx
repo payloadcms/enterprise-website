@@ -1,4 +1,7 @@
 import { GetStaticProps, GetStaticPaths } from 'next'
+import React from 'react';
+import Blocks from '../components/Blocks';
+import { Hero } from '../components/Hero';
 import { getApolloClient } from '../graphql';
 import { PAGE, PAGES } from '../graphql/pages';
 import type { MainMenu, Page } from '../payload-types';
@@ -9,12 +12,17 @@ const PageTemplate: React.FC<{
   preview?: boolean
 }> = (props) => {
   const {
-    page: { title },
-    mainMenu,
+    page: {
+      hero,
+      layout
+    },
   } = props;
 
   return (
-    <h1>{title}</h1>
+    <React.Fragment>
+      <Hero {...hero} />
+      <Blocks blocks={layout} />
+    </React.Fragment>
   )
 }
 

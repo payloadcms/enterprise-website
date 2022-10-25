@@ -3,10 +3,10 @@
 @import './type.scss';
 
 :root {
-  --breakpoint-xs-width: 400px;
-  --breakpoint-s-width: 768px;
-  --breakpoint-m-width: 1024px;
-  --breakpoint-l-width: 1440px;
+  --breakpoint-xs-width : #{$breakpoint-xs-width};
+  --breakpoint-s-width : #{$breakpoint-s-width};
+  --breakpoint-m-width : #{$breakpoint-m-width};
+  --breakpoint-l-width : #{$breakpoint-l-width};
   --scrollbar-width: 17px;
 
   --base: 24px;
@@ -14,13 +14,16 @@
   --font-mono: 'Roboto Mono', monospace;
 
   --gutter-h: 180px;
+  --block-padding: 120px;
 
   @include large-break {
     --gutter-h: 144px;
+    --block-padding: 96px;
   }
 
   @include mid-break {
     --gutter-h: 24px;
+    --block-padding: 60px;
   }
 }
 
