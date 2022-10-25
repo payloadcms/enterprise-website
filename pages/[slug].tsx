@@ -15,13 +15,12 @@ const PageTemplate: React.FC<{
     page: {
       hero,
       layout,
-      title,
     },
   } = props;
 
   return (
     <React.Fragment>
-      <Hero {...hero} title={title} />
+      <Hero {...hero} />
       <Blocks blocks={layout} />
     </React.Fragment>
   )

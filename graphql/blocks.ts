@@ -6,7 +6,7 @@ export const CALL_TO_ACTION = `
   ctaBackgroundColor
   richText
   links {
-    link ${LINK_FIELDS({ disableAppearance: true })}
+    link ${LINK_FIELDS()}
   }
 }
 `
@@ -19,17 +19,17 @@ export const CONTENT = `
   columnOne {
     richText
     enableLink
-    link ${LINK_FIELDS({ disableAppearance: true })}
+    link ${LINK_FIELDS()}
   }
   columnTwo {
     richText
     enableLink
-    link ${LINK_FIELDS({ disableAppearance: true })}
+    link ${LINK_FIELDS()}
   }
   columnThree {
     richText
     enableLink
-    link ${LINK_FIELDS({ disableAppearance: true })}
+    link ${LINK_FIELDS()}
   }
 }
 `
