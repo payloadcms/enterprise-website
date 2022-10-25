@@ -12,6 +12,8 @@
 
 .label {
   @extend %label;
+  display: flex;
+  align-items: center;
 }
 
 .button {
