@@ -1,19 +1,15 @@
 import React from 'react';
 import { Cell, Grid } from '@faceless-ui/css-grid';
-import { HeroProps } from '..';
+import { Page } from '../../../payload-types';
 import { Gutter } from '../../Gutter';
-import { Label } from '../../Label';
 import RichText from '../../RichText';
 
-import classes from './index.module.scss';
-
-export const LowImpactHero: React.FC<HeroProps> = ({ richText, media, title }) => {
+export const LowImpactHero: React.FC<Page['hero']> = ({ richText }) => {
   return (
     <Gutter>
       <Grid>
         <Cell cols={8}>
-          <Label>{title}</Label>
-          <RichText className={classes.richText} content={richText} />
+          <RichText content={richText} />
         </Cell>
       </Grid>
     </Gutter>
