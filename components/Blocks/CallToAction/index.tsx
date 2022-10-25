@@ -2,6 +2,7 @@ import { Cell, Grid } from '@faceless-ui/css-grid';
 import React from 'react';
 import { Page } from '../../../payload-types';
 import { Gutter } from '../../Gutter';
+import { CMSLink } from '../../Link';
 import RichText from '../../RichText';
 import { VerticalPadding } from '../../VerticalPadding';
 
@@ -50,9 +51,10 @@ export const CallToActionBlock: React.FC<Props> = ({ ctaBackgroundColor, links, 
               <div className={classes.linkGroup}>
                 {(links || []).map(({ link }, i) => {
                   return (
-                    <div key={i}>
-                      {link.label}
-                    </div>
+                    <CMSLink
+                      key={i}
+                      {...link}
+                    />
                   )
                 })}
               </div>

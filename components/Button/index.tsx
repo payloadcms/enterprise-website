@@ -37,8 +37,6 @@ export const Button: React.FC<Props> = ({
     className,
   }
 
-  if (el !== 'link') delete elementProps.className;
-
   const content = (
     <div className={classes.content}>
       <Chevron />
