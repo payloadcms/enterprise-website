@@ -37,10 +37,14 @@ export const CONTENT = `
 export const MEDIA_BLOCK = `
 ...on MediaBlock {
   blockType
-  mediaBackgroundColor
+  mediaBlockBackgroundColor
   position
   media {
-    url
+    mimeType
+    filename
+    width
+    height
+    alt
   }
   caption
 }

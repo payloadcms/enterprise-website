@@ -26,6 +26,11 @@ export const PAGE = gql`
           }
           media {
             url
+            filename
+            alt
+            mimeType
+            width
+            height
           }
         }
         layout {
