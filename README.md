@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) that fetches data from [Payload CMS](https://payloadcms.com) using [GraphQL](https://graphql.org/).
 
-This repo is was made explicitly for an episode of [Learn With Jason](https://www.learnwithjason.dev/) which includes a live, hands-on demo — follow along directly with [the episode here](https://www.learnwithjason.dev/build-a-scalable-design-system-for-enterprise-websites).
+This repo is made for an episode of [Learn With Jason](https://www.learnwithjason.dev/) which includes a live, hands-on demo — follow along directly with [the episode here](https://www.learnwithjason.dev/build-a-scalable-design-system-for-enterprise-websites).
 
 ## Getting Started
 
